@@ -3,6 +3,10 @@ body, h1, p, nav {
 	font-family: arial;
 }
 
+body{
+	background-color: #303030;
+}
+
 header, nav {
 	position: fixed;
 	z-index: 4;
@@ -40,17 +44,16 @@ nav {
 }
 
 #container{
-	background-color: #303030;
-
 	z-index: 1;
 
-	margin-top: 114px;
+	margin-top: 134px;
 }
 
 #gallery {
 	display: flex;
 	flex-flow: row wrap;
 	justify-content: center;
+	flex-direction: row;
 }
 
 #col1, #col2{
@@ -76,4 +79,18 @@ img{
 img:hover{
 	z-index: 3;
 	transform: scale(1.04);
-};
+}
+
+img:target{
+	z-index: 5;
+	width: 1000px;
+	height: 1000px;
+	background: rgba(0, 0, 0, 0.2);;
+	transform: scale(3);
+}
+
+@media screen and (max-width: 600px){
+	#col1, img{
+		max-width: 90%;
+	}
+}
