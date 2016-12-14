@@ -82,6 +82,7 @@ nav a:active {
 
 #container{
 	z-index: 1;
+
 	/*margin, padding*/
 	margin-top: 230px;
 	margin-right: 10px;
@@ -120,12 +121,25 @@ figure {
 	
 	z-index: 2;
 }
-
 figcaption {
-	background-color: #fff;
+	/*colors*/
+	/* fallback */ background-color: rgba(255, 255, 255, 0.5);
+	/* Safari, Chrome */ background: -webkit-linear-gradient(left, #fff, rgba(255, 255, 255, 0.0));
+	/* Firefox */ background: -moz-linear-gradient(left, #fff, rgba(255, 255, 255, 0.0));
+	/* Opera */ background: -o-linear-gradient(left, #fff, rgba(255, 255, 255, 0.0));
 	color: rgba(0, 0, 0, 0.54);
-}
 
+	/*invisible*/
+	display: none;
+
+	/*pisition*/
+	position: absolute;
+	bottom: 0;
+	left: 0;
+
+	/*width, height*/
+	width: 100%;
+}
 img{
 	width: 100%;
 	flex-grow: 1;
@@ -138,9 +152,12 @@ figure:hover{
 	z-index: 3;
 	transform: scale(1.04);
 }
-
 figure:hover img{
 	filter: grayscale(0);
+}
+figure:hover figcaption{
+	/*visible*/
+	display: initial;
 }
 
 @media screen and (min-width: 768px){
